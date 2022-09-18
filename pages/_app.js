@@ -42,7 +42,6 @@ function MyApp({ Component, pageProps }) {
         ) : (
           <Link href="/">Sign In</Link>
         )}
-
         <div>&nbsp;&nbsp;</div>
       </nav>
       <br></br>
@@ -57,5 +56,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default withAuthenticator(MyApp, { includeGreetings: true});
-
+export default withAuthenticator(MyApp, { includeGreetings: true });

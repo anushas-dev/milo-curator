@@ -1,32 +1,33 @@
 import { API, graphqlOperation } from "aws-amplify";
 import React, { useState } from "react";
-import { createPlaylist } from "../../src/graphql/mutations";
+import { createSong } from "../../src/graphql/mutations";
 
 export default function CreateNewPlaylist() {
-  const [playlist_name, setPlaylistName] = useState("");
+  const [song_name, setSongName] = useState("");
   const [playlist_id, setPlaylistId] = useState("");
   async function postPlaylist() {
     const response = await API.graphql({
-      query: createPlaylist,
+      query: createSong,
       variables: {
         input: {
-          id: playlist_id.toString(),
-          name: playlist_name.toString(),
+          id: (Math.floor((Math.random() * 100) + 1)).toString(),
+          title: song_name.toString(),
+          playlistSongsId: playlist_id.toString()
         },
       },
     });
     console.log(response)
     if (response.status == 201 || response.status==304) {
-      window.alert(playlist_name + " Created Successfully!");
+      window.alert(song_name + " Created Successfully!");
     } else {
-      window.alert(playlist_name + " couldn't be created!");
+      window.alert(song_name + " couldn't be created!");
     }
   }
 
   return (
     <div>
       <div>
-        <h2 className="d-flex justify-content-center">Create Playlist</h2>
+        <h2 className="d-flex justify-content-center">Add Song to Existing Playlist</h2>
       </div>
       <br></br>
       <div className="d-flex justify-content-center">
@@ -48,7 +49,7 @@ export default function CreateNewPlaylist() {
                 />
                 &nbsp; &nbsp; &nbsp; &nbsp;
                 <span className="input-group-text" id="song-name">
-                  🎼 Playlist Name
+                  🎼 Song Name
                 </span>
                 <input
                   type="text"
@@ -56,8 +57,8 @@ export default function CreateNewPlaylist() {
                   placeholder=""
                   aria-label="song-name"
                   aria-describedby="song-name"
-                  value={playlist_name}
-                  onChange={(e) => setPlaylistName(e.target.value)}
+                  value={song_name}
+                  onChange={(e) => setSongName(e.target.value)}
                 />
                 &nbsp; &nbsp; &nbsp; &nbsp;
                 <button className="btn btn-sm btn-info" onClick={postPlaylist}>

@@ -3,16 +3,22 @@ import "@aws-amplify/ui-react/styles.css";
 import { API, graphqlOperation } from "aws-amplify";
 import { listSongs } from "../src/graphql/queries";
 
-
 export async function getStaticProps() {
-  const res = await API.graphql(graphqlOperation(listSongs)) ;
+  const res = await API.graphql(graphqlOperation(listSongs));
   const data = res.data.listSongs.items;
   return { props: { songs: data }, revalidate: 30 };
 }
 
-export default function ShowSongs({songs}) {
+export default function ShowSongs({ songs }) {
   return (
     <div>
+      <br></br>
+      &nbsp; &nbsp;&nbsp;
+      <Link href="/songs/create">
+        <button className="btn btn-sm btn-dark justify-content-end">
+          Add New song
+        </button>
+      </Link>
       <div className="d-flex justify-content-center">
         <h2>Songs</h2>
       </div>
