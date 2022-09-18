@@ -55,7 +55,6 @@ function Home({ playlists }) {
           <img
             src="https://cdn.pixabay.com/photo/2015/01/29/11/36/mobile-616012_960_720.jpg"
             className="card-img-top"
-            width="100%" height="100%" layout="responsive" objectFit="contain"
           ></img>
           <div className="card-body">
             <p className="card-text">
@@ -69,7 +68,6 @@ function Home({ playlists }) {
           <img
             src="https://cdn.pixabay.com/photo/2015/05/31/15/07/coffee-792113_960_720.jpg"
             className="card-img-top"
-            width="100%" height="100%" layout="responsive" objectFit="contain"
           ></img>
           <div className="card-body">
             <p className="card-text">
