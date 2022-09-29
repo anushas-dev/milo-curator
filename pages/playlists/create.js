@@ -16,7 +16,7 @@ export default function CreateNewPlaylist() {
       },
     });
     console.log(response)
-    if (response.status == 201 || response.status==304) {
+    if (response.data.createPlaylist.id.length > 0) {
       window.alert(playlist_name + " Created Successfully!");
     } else {
       window.alert(playlist_name + " couldn't be created!");
