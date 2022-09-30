@@ -5,6 +5,7 @@ import { createSong } from "../../src/graphql/mutations";
 export default function CreateNewPlaylist() {
   const [song_name, setSongName] = useState("");
   const [playlist_id, setPlaylistId] = useState("");
+  const [new_song, setCreatedSong] = useState("")
   async function postPlaylist() {
     const response = await API.graphql({
       query: createSong,
@@ -16,12 +17,8 @@ export default function CreateNewPlaylist() {
         },
       },
     });
+    setCreatedSong((await response).data.createSong.title)
     console.log(response)
-    if (response.data.createSong.id.length > 0) {
-      window.alert(song_name + " Created Successfully!");
-    } else {
-      window.alert(song_name + " couldn't be created!");
-    }
   }
 
   return (

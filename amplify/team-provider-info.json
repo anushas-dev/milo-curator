@@ -1,15 +1,15 @@
 {
   "staging": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-milocurator-staging-181836-authRole",
-      "UnauthRoleArn": "arn:aws:iam::185951564272:role/amplify-milocurator-staging-181836-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::185951564272:role/amplify-milocurator-staging-181836-authRole",
+      "AuthRoleName": "amplify-milocurator-staging-182923-authRole",
+      "UnauthRoleArn": "arn:aws:iam::185951564272:role/amplify-milocurator-staging-182923-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::185951564272:role/amplify-milocurator-staging-182923-authRole",
       "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-milocurator-staging-181836-deployment",
-      "UnauthRoleName": "amplify-milocurator-staging-181836-unauthRole",
-      "StackName": "amplify-milocurator-staging-181836",
-      "StackId": "arn:aws:cloudformation:us-east-2:185951564272:stack/amplify-milocurator-staging-181836/25be91a0-36b5-11ed-800d-027e1a898160",
-      "AmplifyAppId": "d33t756i6wlg0e"
+      "DeploymentBucketName": "amplify-milocurator-staging-182923-deployment",
+      "UnauthRoleName": "amplify-milocurator-staging-182923-unauthRole",
+      "StackName": "amplify-milocurator-staging-182923",
+      "StackId": "arn:aws:cloudformation:us-east-2:185951564272:stack/amplify-milocurator-staging-182923/ceba5c20-40ed-11ed-9664-0a3ee5e151cc",
+      "AmplifyAppId": "d3ifrz5idoss4j"
     },
     "categories": {
       "auth": {

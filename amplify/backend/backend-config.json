@@ -41,7 +41,9 @@
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
+              "apiKeyExpirationDays": 30,
+              "apiKeyExpirationDate": "2022-10-30T18:40:59.014Z",
+              "description": "milo-api-key"
             }
           },
           "additionalAuthenticationProviders": []

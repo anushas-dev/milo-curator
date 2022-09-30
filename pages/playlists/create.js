@@ -1,26 +1,18 @@
-import { API, graphqlOperation } from "aws-amplify";
+
 import React, { useState } from "react";
-import { createPlaylist } from "../../src/graphql/mutations";
+import { API, graphqlOperation } from "aws-amplify"
+import { createPlaylist } from "../../src/graphql/mutations"
+
 
 export default function CreateNewPlaylist() {
   const [playlist_name, setPlaylistName] = useState("");
   const [playlist_id, setPlaylistId] = useState("");
-  async function postPlaylist() {
-    const response = await API.graphql({
-      query: createPlaylist,
-      variables: {
-        input: {
-          id: playlist_id.toString(),
-          name: playlist_name.toString(),
-        },
-      },
-    });
-    console.log(response)
-    if (response.data.createPlaylist.id.length > 0) {
-      window.alert(playlist_name + " Created Successfully!");
-    } else {
-      window.alert(playlist_name + " couldn't be created!");
-    }
+  const [new_playlist, setplaylistCreated] = useState("");
+
+  const postPlaylist = async () => {
+    const response = API.graphql(graphqlOperation(createPlaylist, { input: { id: playlist_id, name: playlist_name } }));
+    setplaylistCreated((await response).data.createPlaylist.name)
+    window.alert(new_playlist + " is created!")
   }
 
   return (
